@@ -1,0 +1,36 @@
+@startuml LexicalAnalyzer
+left to right direction
+
+circle Start as start
+circle Finish as finish
+circle EOF as eof
+circle Letter as letter
+circle Digit as digit
+circle Comment as comment
+circle Separator as separator
+circle Another as another
+
+start --> letter    : Low | Up | _ 
+start --> digit     : digit | - | .
+start --> another   : another
+start --> comment   : {
+start --> separator : space | \\ t | \\n
+start --> eof       : EOF
+
+letter --> letter   : Low | Up | digit
+letter --> finish   : another
+
+comment --> start   : }
+comment --> eof     : EOF
+
+digit --> digit     : digit
+digit --> finish    : another
+
+another --> finish  : all
+
+separator --> start : all
+
+finish --> eof      : EOF
+finish --> start    : another
+
+@enduml

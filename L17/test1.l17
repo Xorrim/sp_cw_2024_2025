@@ -1,0 +1,25 @@
+{ Лінійний алгоритм }
+STARTPROGRAM
+STARTBLOK
+VARIABLE    INT16   _A, _B, _X, _Y;
+
+{   1. Ввести два числа А і В   }
+INPUT   _A
+INPUT   _B
+
+{   2. Вивести на екран: ...    }
+OUTPUT  _A + _B
+OUTPUT  _A - _B
+OUTPUT  _A * _B
+OUTPUT  _A DIV _B
+OUTPUT  _A MOD _B
+
+{   3. Обрахувати значення виразів  }
+_X <- (_A - _B) * 10 + (_A + _B) DIV 10
+_Y <- _X + _X MOD 10
+
+{   4. Вивести значення Х і У на екран. }
+OUTPUT _X
+OUTPUT _Y
+
+ENDBLOK

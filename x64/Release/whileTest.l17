@@ -1,0 +1,14 @@
+{   тестування змін до WHILE}
+STARTPROGRAM
+STARTBLOK
+VARIABLE    INT16   _A, _B;
+
+INPUT _A
+WHILE _A << 10 
+    OUTPUT _A
+    _A <- 1 + _A
+    CONTINUE WHILE
+    EXIT WHILE
+END WHILE
+
+ENDBLOK
